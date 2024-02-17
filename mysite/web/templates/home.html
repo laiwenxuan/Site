@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--    <meta name="viewport"-->
+    <!--          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+    <!--    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOSS直聘职业数据分析</title>
+    <style>
+       *{/*去掉所有的边距 居中*/
+            margin: 0 auto;
+            padding: 0;
+            list-style: none;
+        }
+       .clear:after{/*解决父级边框塌陷*/
+            content: '';
+            display: block;
+            clear: both;
+        }
+       body{
+           width: 100%;
+           height: 100%;
+           margin:0;//body外边距设为0；
+           background-color: ffffff;
+           /*{#background-size:cover;#}*/
+           /*{#background-size: 100% 100%;#}*/
+       }
+       header{
+           Border-radius:20px;
+           margin-top: 1%;
+           width: 98%;
+           height: 15%;
+           border: 1px solid transparent;
+           background-color: #00bebd;
+           box-shadow: 0 0 20px #00ffcc;
+           opacity: 0.7;
+       }
+       .logo{
+           Border-radius:20px;
+           left: 5%;
+           float: left;
+           width: 15%;
+           height: 100%;
+           border: 2px solid #000000;
+           background-color: white;
+           box-shadow: 0 0 20px #000033;
+       }
+       .title{
+           /*color: black;*/
+           text-align: center;
+           margin-top: 1%;
+           font-size: 60px;
+           width: 80%;
+           font-family: 楷体;
+           color: white;
+       }
+       section{
+           width: 100%;
+           height: 90%;
+<!--           border: 2px solid black;-->
+       }
+       section .wrapper{/*按钮*/
+           float:left;
+           width: 15%;
+           height: 110%;
+           /*{#background-color: grey;#}*/
+           background-color: rgba(255,255,255, 0.85);
+           opacity: 0.5;
+           Border-radius:20px;
+           box-shadow: 0 0 20px wheat;
+           overflow-y: auto;
+       }
+       button{
+           left: 30px;
+           Border-radius:20px;
+           width: 60%;
+           height: 9%;
+           font-size: 20px;
+<!--           font-color:black-->
+           font-family: 楷体;
+           color: #00CCCC;
+           background-color: white;
+<!--           background-image: linear-gradient(147deg, #00aaaa 100%, #white 74%);-->
+<!--           background-image: linear-gradient(147deg, #00aaaa 0%, grey 62%);-->
+           border: 2px solid rgba(0, 0, 0, 0.85);
+           display: flex;
+           align-items: center;
+           justify-content: center;
+
+       }
+       .active{
+           /*background-color: lightpink;*/
+           box-shadow: 0 0 40px gold;
+           color: gold;
+       }
+       button:hover{
+           background-color: #00CCCC;
+           color: white;
+           cursor:pointer
+       }
+       .p2 div{
+           diplay:none;
+           font-size: 40px;
+           font-family: 楷体;
+           font-color:black;
+           text-align: center;
+       }
+
+       section .div2 { /*右边内容*/
+           float: right;
+           width: 80%;
+           height: 110%;
+           /*top: 100px;*/
+           Border-radius:30px;
+           /*{#background-color: grey;#}*/
+           background-color: transparent;
+           box-shadow: 0 0 20px wheat;
+
+
+
+       }
+
+    .p1{/*选择下拉*/
+            float: right;
+            font-size: 20px;
+            margin-top: 1%;
+            margin-right: 5%;
+            font-family: 楷体;
+            color: wheat;
+            /*{#background-color: black;#}*/
+            background-color: rgba(34, 34, 34, 0.85);
+        }
+        .p2{/*点击按钮展示哪个区*/
+            float: left;
+            width: 20%;
+            height: 5%;
+            color: black;
+            /*border: 1px solid black;*/
+            /*background-color: lightyellow;*/
+            /*margin-left: 1%;*/
+            /*margin-top: 1%;*/
+        }
+       .div2 .p3{/*展示框*/
+           float: left;
+           width: 73%;
+           height: 80%;
+           margin-top: 3%;
+           left: 5%;
+           /*border: 1px solid black;*/
+           /*{#background-color: grey;#}*/
+           background-color: transparent;
+       }
+
+
+
+
+
+    </style>
+
+</head>
+<body style="height: 600px;background-color: #ffffff">
+
+
+<header class="top clear">
+    <img class="logo" src="../static/photo/boss.jpeg" title="logo"/>
+    <div class="title clear">BOSS 直 聘 职 业 数 据 分 析</div>
+</header>
+
+
+<section class="middle clear">
+    <!--        按钮-->
+    <br/>
+    <div class="wrapper">
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="1">行&nbsp;业&nbsp;得&nbsp;分</button>
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="2">薪&nbsp;资&nbsp;预&nbsp;测</button>
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="3">聚&nbsp;类&nbsp;分&nbsp;析</button>
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="4">图&nbsp;表&nbsp;分&nbsp;析</button>
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="5">招&nbsp;聘&nbsp;信&nbsp;息</button>
+
+        <!-- onclick="selectLogo()"-->
+    </div>
+
+    <!--        右侧下拉菜单-->
+    <div style="height: 100%;width: 2%;float: left"></div>
+    <div style="height: 100%;width: 1px;float: left;background-color: grey"></div>
+    <div style="height: 100%;width: 2%;float: left"></div>
+    <div class="div2 clear" style="opacity: 0.5;">
+
+        <br/>
+
+        <label for="logo1"></label>
+        <select class="p1" id="logo1" onclick="selectLogo()">
+            <option value="Title">评&nbsp;&nbsp;分</option>
+            <option value="Score">行位得分</option>
+        </select>
+
+        <label for="logo2"></label>
+        <select class="p1" id="logo2" style="display: none" onchange="selectLogo()">
+            <option value="Title">预&nbsp;&nbsp;测</option>
+            <option value="Salary">工资预测</option>
+            <option value="Compare">模型比较</option>
+        </select>
+
+        <label for="logo3"></label>
+        <select class="p1" id="logo3" style="display: none" onchange="selectLogo()">
+            <option value="Title">聚&nbsp;&nbsp;类</option>
+            <option value="Welfare">福利待遇</option>
+            <option value="Ability">能力要求</option>
+        </select>
+
+        <label for="logo4"></label>
+        <select class="p1" id="logo4" style="display: none" onchange="selectLogo()">
+            <option value="Title">图&nbsp;&nbsp;表</option>
+            <option value="Cloudy">词云</option>
+            <option value="Pie">饼图</option>
+            <option value="Heat">地图</option>
+        </select>
+
+        <label for="logo5"></label>
+        <select class="p1" id="logo5" style="display: none" onclick="selectLogo()">
+            <option value="Title">展&nbsp;&nbsp;示</option>
+            <option value="List">招聘信息</option>
+        </select>
+        <div class="p2">
+            <!-- 中间展示框标题-->
+            <div class="content" style="display: none;font-size: 30px;font-family: 楷体;color:black">类型：行业得分</div>
+            <div class="content" style="display: none;font-size: 30px;font-family: 楷体;color:black">类型：薪资预测</div>
+            <div class="content" style="display: none;font-size: 30px;font-family: 楷体;color:black">类型：聚类分析</div>
+            <div class="content" style="display: none;font-size: 30px;font-family: 楷体;color:black">类型：图表分析</div>
+            <div class="content" style="display: none;font-size: 30px;font-family: 楷体;color:black">类型：招聘信息</div>
+        </div>
+
+        <!--        中间展示框-->
+        <br/>
+
+        <p class="p3">
+            <iframe id="img1" width="130%" height="95%"
+                    style="opacity: 1.0;left: 10%;border-color: transparent"></iframe>
+        </p>
+
+    </div>
+</section>
+
+<script type="text/javascript">
+
+            let btId=1;
+<!--            左边职业选择按钮-->
+            var btn=document.getElementsByTagName('button');
+<!--            中间框标题-->
+            var div=document.getElementsByClassName('content');
+
+            for(var i=0;i<btn.length;i++){
+                //使用立即执行函数 按钮亮暗以及小框显示对应的区域
+                (function (n){
+                    btn[n].onclick=function(){
+                        btId = this.id
+// <!--                        img1是显示框的id-->
+                        var logoImg=document.getElementById("img1");
+                        logoImg.src = "";
+
+<!--                        logo是右边城市的id，logo1是选择左边最后一个按钮后右边的城市-->
+                    if(this.id==="1"){
+                        var logo1 = document.getElementById("logo1");
+                        logo1.style.display = "block"
+                        var logo2 = document.getElementById("logo2");
+                        logo2.style.display = "none"
+                        var logo3 = document.getElementById("logo3");
+                        logo3.style.display = "none"
+                        var logo4 = document.getElementById("logo4");
+                        logo4.style.display = "none"
+                        var logo5 = document.getElementById("logo5");
+                        logo5.style.display = "none"
+                    }else if (this.id === "2") {
+                        var logo1 = document.getElementById("logo1");
+                        logo1.style.display = "none"
+                        var logo2 = document.getElementById("logo2");
+                        logo2.style.display = "block"
+                        var logo3 = document.getElementById("logo3");
+                        logo3.style.display = "none"
+                        var logo4 = document.getElementById("logo4");
+                        logo4.style.display = "none"
+                        var logo5 = document.getElementById("logo5");
+                        logo5.style.display = "none"
+                    } else if (this.id === "3") {
+                        var logo1 = document.getElementById("logo1");
+                        logo1.style.display = "none"
+                        var logo2 = document.getElementById("logo2");
+                        logo2.style.display = "none"
+                        var logo3 = document.getElementById("logo3");
+                        logo3.style.display = "block"
+                        var logo4 = document.getElementById("logo4");
+                        logo4.style.display = "none"
+                        var logo5 = document.getElementById("logo5");
+                        logo5.style.display = "none"
+                    } else if (this.id === "4") {
+                        var logo1 = document.getElementById("logo1");
+                        logo1.style.display = "none"
+                        var logo2 = document.getElementById("logo2");
+                        logo2.style.display = "none"
+                        var logo3 = document.getElementById("logo3");
+                        logo3.style.display = "none"
+                        var logo4 = document.getElementById("logo4");
+                        logo4.style.display = "block"
+                        var logo5 = document.getElementById("logo5");
+                        logo5.style.display = "none"
+                    } else if (this.id==="5"){
+                        var logo1 = document.getElementById("logo1");
+                        logo1.style.display = "none"
+                        var logo2 = document.getElementById("logo2");
+                        logo2.style.display = "none"
+                        var logo3 = document.getElementById("logo3");
+                        logo3.style.display = "none"
+                        var logo4 = document.getElementById("logo4");
+                        logo4.style.display = "none"
+                        var logo5 = document.getElementById("logo5");
+                        logo5.style.display = "block"
+                    }
+                        //同类的class属性为null
+                        for(var j=0;j<btn.length;j++){
+                            btn[j].className="";
+                            div[j].style.display="none";
+                        }
+                        this.className="active";
+                        div[n].style.display="block";
+                    }
+                }(i))
+            }
+
+            function selectLogo(){
+                var logo1=document.getElementById("logo1");
+                var n1=logo1.value;
+
+                var logo2=document.getElementById("logo2");
+                var n2=logo2.value;
+
+                var logo3=document.getElementById("logo3");
+                var n3=logo3.value;
+
+                var logo4=document.getElementById("logo4");
+                var n4=logo4.value;
+
+                var logo5=document.getElementById("logo5");
+                var n5=logo5.value
+
+                var logoImg=document.getElementById("img1");
+                if (btId==="1"){
+                logoImg.src = "http://127.0.0.1:8000/Occupation"+n1;
+            }else if (btId==="2"){
+                logoImg.src = "http://127.0.0.1:8000/Predict"+n2;
+            }else if (btId==="3"){
+                logoImg.src = "http://127.0.0.1:8000/Clustering"+n3;
+            }else if (btId==="4"){
+                logoImg.src = "http://127.0.0.1:8000/Others"+n4;
+            }else if (btId==="5"){
+                logoImg.src = "http://127.0.0.1:8000/Occupations"+n5;
+            }
+        }
+
+
+</script>
+</body>
+</html>

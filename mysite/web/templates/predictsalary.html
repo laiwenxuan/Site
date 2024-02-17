@@ -1,0 +1,217 @@
+<!-- -*- coding: gbk -*- -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预测工资</title>
+    <!-- 引入Bootstrap样式 -->
+    <link
+            rel="stylesheet"
+            href="../static/login/css/bootstrap.min.css"
+    />
+    <style>
+body {
+background-color: #f8f9fa;
+}
+
+  .container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin-top: 100px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  .result {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <form method="POST" action="/PredictSalary/">
+
+        <div class="form-group">
+            <label for="city">城市：</label>
+            <select id="city" name="city" class="form-control">
+                <option value="北京">北京</option>
+                <option value="上海">上海</option>
+                <option value="广州">广州</option>
+                <option value="深圳">深圳</option>
+                <option value="杭州">杭州</option>
+                <option value="天津">天津</option>
+                <option value="西安">西安</option>
+                <option value="苏州">苏州</option>
+                <option value="武汉">武汉</option>
+                <option value="厦门">厦门</option>
+                <option value="长沙">长沙</option>
+                <option value="成都">成都</option>
+                <option value="郑州">郑州</option>
+                <option value="重庆">重庆</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="degree">学历：</label>
+            <select id="degree" name="degree" class="form-control">
+                <option value="本科">大专</option>
+                <option value="本科">本科</option>
+                <option value="硕士">硕士</option>
+                <option value="博士">博士</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="experience">经验：</label>
+            <select id="experience" name="experience" class="form-control">
+                <option value="在校">在校/应届</option>
+                <option value="经验不限">经验不限</option>
+                <option value="1年以内">1年以内</option>
+                <option value="1-3年">1-3年</option>
+                <option value="3-5年">3-5年</option>
+                <option value="5-10年">5-10年</option>
+                <option value="10年以上">10年以上</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="occupation">职业：</label>
+            <select id="occupation" name="occupation" class="form-control">
+                <option value="数据分析">数据分析</option>
+                <option value="数据挖掘">数据挖掘</option>
+                <option value="数据仓库">数据仓库</option>
+                <option value="python">python</option>
+                <option value="java">java</option>
+                <option value="AI">AI</option>
+                <option value="BI">BI</option>
+                <option value="CTO">CTO</option>
+                <option value="ETL">ETL</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>福利待遇：</label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="insurance"
+                           value="五险一金">
+                    <label class="form-check-label" for="insurance">五险一金</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="birthday"
+                           value="生日福利">
+                    <label class="form-check-label" for="birthday">生日福利</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="sick-leave"
+                           value="病假带薪">
+                    <label class="form-check-label" for="sick-leave">病假带薪</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="overtime"
+                           value="加班补助">
+                    <label class="form-check-label" for="overtime">加班补助</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="employee-travel"
+                           value="员工旅游">
+                    <label class="form-check-label" for="employee-travel">员工旅游</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="full-attendance"
+                           value="全勤奖">
+                    <label class="form-check-label" for="full-attendance">全勤奖</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="year-end-bonus"
+                           value="年终奖">
+                    <label class="form-check-label" for="year-end-bonus">年终奖</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input welfare-checkbox" type="checkbox" name="welfare" id="stock-options"
+                           value="股票期权">
+                    <label class="form-check-label" for="stock-options">股票期权</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label id="selected-welfare">已选福利：</label>
+            <span id="selected-welfare-count">0</span> 项
+        </div>
+
+        <div class="form-group">
+            <label for="modelselect" style="color:red">模型选择：</label>
+            <select id="modelselect" name="modelselect" class="form-control">
+                <option value="线性回归">线性回归</option>
+                <option value="决策树">决策树</option>
+                <option value="随机森林">随机森林</option>
+                <option value="KNN">KNN</option>
+                <option value="SVR">SVR</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">预测</button>
+    </form>
+</div>
+
+<!-- 引入Bootstrap JavaScript库 -->
+<script
+        src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"
+></script>
+<script
+        src="https://cdn.bootcdn.net/ajax/libs/popper.js/2.9.3/umd/popper.min.js"
+></script>
+<script
+        src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"
+></script>
+<script>
+$(document).ready(function() {
+    // 监听福利复选框的变化
+    $('input[name="welfare"]').change(function() {
+        // 统计已选福利数量
+        var selectedCount = $('input[name="welfare"]:checked').length;
+        // 更新显示已选福利数量的元素
+        $('#selected-welfare-count').text(selectedCount);
+    });
+});
+
+</script>
+<script>
+    const welfareCheckboxes = document.querySelectorAll('.welfare-checkbox');
+    const selectedWelfareCount = document.getElementById('selected-welfare-count');
+
+    welfareCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const selectedCount = Array.from(welfareCheckboxes).filter(checkbox => checkbox.checked).length;
+            selectedWelfareCount.textContent = selectedCount;
+        });
+    });
+</script>
+</body>
+</html>

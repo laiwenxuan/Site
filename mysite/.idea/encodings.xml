@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/mysite/urls.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/algorithm/data/jobs_origin.csv" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/web/templates/predictsalary.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/web/views.py" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

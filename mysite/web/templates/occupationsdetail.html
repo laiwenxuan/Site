@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../static/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+  <style>
+    .container {
+      max-width: 300px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    .detail-link {
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p class="fw-bold">公司：{{ occupation.公司名字 }}</p>
+    <p class="fw-bold">职位：{{ occupation.职位名称 }}</p>
+    <p class="fw-bold">地区：{{ occupation.地区 }}</p>
+    <p class="fw-bold">薪水：{{ occupation.薪水 }}</p>
+    <p class="fw-bold">标签：{{ occupation.标签 }}</p>
+    <p class="fw-bold">要求：{{ occupation.能力要求 }}</p>
+    <p class="fw-bold">待遇：{{ occupation.福利待遇 }}</p>
+    <p class="fw-bold">详情：</p>
+    <a href="{{ occupation.详情链接 }}" class="detail-link">{{ occupation.详情链接 }}</a>
+    <br/>
+    <br/>
+    <div class="forms_buttons" style="text-align: center;">
+      <a  class="btn btn-success" onclick="goBack()" style="border-radius: 20px; background-color: #007BFF;width: 150px; padding: 10px; cursor: pointer; color: white;">返回</a>
+    </div>
+
+  </div>
+</body>
+  <script src="../static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
+</html>

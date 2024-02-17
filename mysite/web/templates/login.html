@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Boss直聘职业数据分析</title>
+
+    <link rel="stylesheet" href="../static/login/css/reset.min.css">
+    <link rel="stylesheet" href="../static/login/css/style.css">
+<!--    <link rel="stylesheet" href="../static/alert/style.css"/>-->
+<!--    <script src="../static/alert/cute-alert.js"></script>-->
+
+</head>
+<body style="background-color: white" >
+
+<div class="background-image"></div>
+
+<section class="user" style="background-color: transparent;">
+    <div class="user_options-container" style="background-color: black;;box-shadow: 0 0 24px grey;opacity: 0.62;">
+        <div class="user_options-text">
+            <div class="user_options-unregistered">
+                <h2 id="textH" class="user_unregistered-title"
+                    style="font-size: 20px;font-family: 楷体;color: #ffffff"></h2>
+                <br/>
+                <h2 class="user_unregistered-title" style="font-size: 40px;font-family: 楷体;color: #ffffff">
+                    小组成员:</h2>
+                <br/>
+                <h2 class="user_unregistered-title" style="font-size: 30px;font-family: 楷体;color: #ffffff">赖文轩
+                    马骁毅 甘泽隆 黄青苗</h2>
+            </div>
+        </div>
+
+        <div class="user_options-forms" id="user_options-forms"
+             style="  background-color: rgba(34, 34, 34, 0.85);  line-height: 1em;-webkit-font-smoothing:antialiased;border-radius: 50px">
+            <div class="user_forms-login">
+                <h2 id="headerTitle" class="forms_title"
+                    style="color: #ffffff;text-align: center;font-family: 楷体;font-size: 45px;  box-shadow: 2px 2px 2px white;border-color: black;font-weight: lighter;border-radius: 20px">
+                    BOSS直聘职业数据分析<br/><br/></h2>
+                <br/><br/><br/><br/><br/>
+                <form action="http://127.0.0.1:8000/Home/" class="forms_form" method="post">
+
+                    <div class="forms_buttons" style="float: bottom">
+
+                        <input type="submit" value="登录" class="forms_buttons-action"
+                               style="box-shadow: 0 0 24px #00aaaa;;background-image: linear-gradient(147deg, #00aaaa 0%, grey 74%);;margin-left: 35%;border: 1px solid #00aaaa;width: 30%;border-radius: 20px">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
+
+<style>
+  .forms_buttons-action:hover{
+    box-shadow: 0 0 24px #00aaaa;
+  }
+
+  .background-image {
+  /* 将图片设置为背景 */
+  background-image: url("../static/photo/background_chat.jpg");
+
+  /* 调整背景图片的大小和位置 */
+  background-size: cover;
+  background-position: center;
+
+  /* 如果需要，可以设置背景图片不重复 */
+  background-repeat: no-repeat;
+
+  /* 设置元素的宽度和高度，以适应背景图片 */
+  width: 100%;
+  height: 100vh;
+
+  /* 确保背景图片始终位于页面内容的背后 */
+  position: absolute;
+  z-index: -1;
+}
+</style>
+

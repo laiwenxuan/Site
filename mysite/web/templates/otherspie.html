@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>饼图</title>
+    <!-- 引入 echarts.js -->
+    <script src="../static/login/js/echarts.min.js"></script>
+    <style>
+        #piechart {
+            width: 1000px;
+            height: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 用于展示饼图的容器 -->
+    <div id="piechart"></div>
+
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var piechartDom = document.getElementById('piechart');
+        var myChart = echarts.init(piechartDom);
+
+        // 替换为你自己的饼图数据
+        var data = [
+            { value: 5091, name: 'AI' },
+            { value: 7915, name: '数据分析' },
+            { value: 1570, name: '数据仓库' },
+            { value: 1611, name: '数据挖掘' },
+            { value: 9921, name: 'python' },
+            { value: 8940, name: 'java' },
+            { value: 2087, name: 'CTO' },
+            { value: 2161, name: 'ETL' },
+            { value: 5406, name: 'BI' },
+        ];
+
+        // 替换为你自己的饼图配置项
+        var option = {
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}: {c} ({d}%)'
+            },
+            series: [
+                {
+                    type: 'pie',
+                    radius: '50%',
+                    data: data
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示饼图
+        myChart.setOption(option);
+    </script>
+</body>
+</html>
